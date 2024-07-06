@@ -1,3 +1,4 @@
+import 'package:bookly_app/Core/utils/styles.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
 import 'package:flutter/material.dart';
 
@@ -20,6 +21,24 @@ class BookDetailsViewBody extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: width * 0.17),
                 child: const CustomBookItem(),
+              ),
+              const SizedBox(height: 40),
+              Text(
+                'Lord Of The Rings',
+                style: Styles.textStyle30.copyWith(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(height: 6),
+              Opacity(
+                opacity: 0.7,
+                child: Text(
+                  'R.R Toalken',
+                  style: Styles.textStyle18.copyWith(
+                    fontStyle: FontStyle.italic,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ],
           ),

@@ -1,5 +1,5 @@
 import 'package:bookly_app/Core/utils/styles.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_appbar.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_home_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 

@@ -13,9 +13,11 @@ class BookDetailsViewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var width = MediaQuery.of(context).size.width;
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
+    return SafeArea(
+        child: CustomScrollView(
+      slivers: [
+        SliverFillRemaining(
+          hasScrollBody: false,
           child: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 30),
             child: Column(
@@ -50,7 +52,7 @@ class BookDetailsViewBody extends StatelessWidget {
                 ),
                 const SizedBox(height: 37),
                 const BookAction(),
-                const SizedBox(height: 30),
+                const Expanded(child: SizedBox(height: 50)),
                 const Align(
                   alignment: Alignment.centerLeft,
                   child: Text(
@@ -65,7 +67,7 @@ class BookDetailsViewBody extends StatelessWidget {
             ),
           ),
         ),
-      ),
-    );
+      ],
+    ));
   }
 }

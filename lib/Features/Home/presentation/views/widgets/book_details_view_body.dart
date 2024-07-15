@@ -26,7 +26,9 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(height: 10),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.17),
-                  child: const CustomBookItem(),
+                  child: const CustomBookItem(
+                    imageUrl: 'https://preview.redd.it/this-lotr-poster-by-phantom-city-creative-is-still-one-of-v0-d93hacxq8khb1.jpg?auto=webp&s=4e8aa6c0b43b2614dd36830c69e52a5fd88a233f',
+                  ),
                 ),
                 const SizedBox(height: 40),
                 Text(

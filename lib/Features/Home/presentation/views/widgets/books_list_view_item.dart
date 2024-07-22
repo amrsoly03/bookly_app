@@ -1,15 +1,19 @@
-import 'package:bookly_app/Core/utils/app_router.dart';
-import 'package:bookly_app/Core/utils/assets.dart';
-import 'package:bookly_app/Core/utils/styles.dart';
-import 'package:bookly_app/constants.dart';
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+
+import 'package:bookly_app/Core/utils/app_router.dart';
+import 'package:bookly_app/Core/utils/styles.dart';
+import 'package:bookly_app/Features/Home/data/models/book_model/book_model.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/constants.dart';
 
 import 'book_rating.dart';
 
 class BooksListViewItem extends StatelessWidget {
-  const BooksListViewItem({super.key});
+  const BooksListViewItem({super.key, required this.bookModel});
 
+  final BookModel bookModel;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -20,18 +24,7 @@ class BooksListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            AspectRatio(
-              aspectRatio: 2.5 / 4,
-              child: Container(
-                decoration: BoxDecoration(
-                  image: const DecorationImage(
-                    image: AssetImage(AssetsData.testItem),
-                    fit: BoxFit.fill,
-                  ),
-                  borderRadius: BorderRadius.circular(10),
-                ),
-              ),
-            ),
+            CustomBookItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
             const SizedBox(
               width: 30,
             ),
@@ -42,7 +35,7 @@ class BooksListViewItem extends StatelessWidget {
                   SizedBox(
                     width: MediaQuery.of(context).size.height * .5,
                     child: Text(
-                      'Lord Of The Rings: Return Of The King',
+                      bookModel.volumeInfo.title!,
                       style: Styles.textStyle20.copyWith(
                         fontFamily: kGTSectraFine,
                       ),
@@ -51,19 +44,19 @@ class BooksListViewItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 3),
-                  const Text(
-                    'R.R Toalken',
+                   Text(
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(height: 3),
-                  const Row(
+                   Row(
                     children: [
-                      Text(
-                        '19.99 \$',
+                      const Text(
+                        'Free',
                         style: Styles.textStyle20,
                       ),
-                      Spacer(),
-                      BookRating(),
+                      const Spacer(),
+                      BookRating(rating: 5,count: bookModel.volumeInfo.pageCount?? 0,),
                     ],
                   ),
                 ],

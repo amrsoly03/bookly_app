@@ -24,7 +24,9 @@ class BooksListViewItem extends StatelessWidget {
         height: 125,
         child: Row(
           children: [
-            CustomBookItem(imageUrl: bookModel.volumeInfo.imageLinks.thumbnail),
+            CustomBookItem(
+              imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail?? '',
+            ),
             const SizedBox(
               width: 30,
             ),
@@ -44,19 +46,22 @@ class BooksListViewItem extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 3),
-                   Text(
+                  Text(
                     bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle14,
                   ),
                   const SizedBox(height: 3),
-                   Row(
+                  Row(
                     children: [
                       const Text(
                         'Free',
                         style: Styles.textStyle20,
                       ),
                       const Spacer(),
-                      BookRating(rating: 5,count: bookModel.volumeInfo.pageCount?? 0,),
+                      BookRating(
+                        rating: 5,
+                        count: bookModel.volumeInfo.pageCount ?? 0,
+                      ),
                     ],
                   ),
                 ],

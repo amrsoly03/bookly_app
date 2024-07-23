@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:bookly_app/Core/errors/failures.dart';
 import 'package:bookly_app/Core/utils/api_service.dart';
 import 'package:bookly_app/Features/Home/data/models/book_model/book_model.dart';
@@ -16,11 +18,11 @@ class HomeRepoImpl implements HomeRepo {
     try {
       var data = await apiService.get(
           endPoint:
-              'volumes?q=subject:Programming&Filtring=free_ebooks&sorting=newest');
+              'volumes?q=dc &Filtring=free_ebooks &sorting=newest');
 
       List<BookModel> books = [];
 
-      for (var item in data.values) {
+      for (var item in data['items']) {
         books.add(BookModel.fromJson(item));
       }
       return right(books);
@@ -28,7 +30,9 @@ class HomeRepoImpl implements HomeRepo {
       if (e is DioException) {
         return left(ServerFailures.fromDioError(e));
       }
+      
       return left(ServerFailures(e.toString()));
+      
     }
   }
 
@@ -37,7 +41,7 @@ class HomeRepoImpl implements HomeRepo {
      try {
       var data = await apiService.get(
           endPoint:
-              'volumes?q=subject:Programming&Filtring=free_ebooks');
+              'volumes?q=comics&Filtring=free_ebooks');
 
       List<BookModel> books = [];
 

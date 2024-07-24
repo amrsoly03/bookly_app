@@ -1,6 +1,7 @@
 import 'package:bookly_app/Core/utils/styles.dart';
+import 'package:bookly_app/Features/Home/data/models/book_model/book_model.dart';
 import 'package:bookly_app/Features/Home/presentation/views/widgets/book_rating.dart';
-import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_item.dart';
+import 'package:bookly_app/Features/Home/presentation/views/widgets/custom_book_image.dart';
 import 'package:flutter/material.dart';
 
 import 'book_action.dart';
@@ -8,7 +9,9 @@ import 'custom_book_details_appbar.dart';
 import 'similar_books_list_view.dart';
 
 class BookDetailsViewBody extends StatelessWidget {
-  const BookDetailsViewBody({super.key});
+  const BookDetailsViewBody({super.key, required this.bookModel});
+
+  final BookModel bookModel;
 
   @override
   Widget build(BuildContext context) {
@@ -26,22 +29,23 @@ class BookDetailsViewBody extends StatelessWidget {
                 const SizedBox(height: 10),
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: width * 0.17),
-                  child: const CustomBookItem(
-                    imageUrl: 'https://preview.redd.it/this-lotr-poster-by-phantom-city-creative-is-still-one-of-v0-d93hacxq8khb1.jpg?auto=webp&s=4e8aa6c0b43b2614dd36830c69e52a5fd88a233f',
+                  child:  CustomBookImage(
+                    imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail?? '',
                   ),
                 ),
                 const SizedBox(height: 40),
                 Text(
-                  'Lord Of The Rings',
+                  bookModel.volumeInfo.title!,
                   style: Styles.textStyle30.copyWith(
                     fontWeight: FontWeight.bold,
                   ),
+                  textAlign: TextAlign.center,
                 ),
                 const SizedBox(height: 6),
                 Opacity(
                   opacity: 0.7,
                   child: Text(
-                    'R.R Toalken',
+                    bookModel.volumeInfo.authors![0],
                     style: Styles.textStyle18.copyWith(
                       fontStyle: FontStyle.italic,
                       fontWeight: FontWeight.w500,
@@ -49,10 +53,10 @@ class BookDetailsViewBody extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 18),
-                const BookRating(
+                 BookRating(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  count: 0,
-                  rating: 0,
+                  count: bookModel.volumeInfo.pageCount ?? 0,
+                  rating: 5,
                 ),
                 const SizedBox(height: 37),
                 const BookAction(),

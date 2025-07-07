@@ -32,7 +32,8 @@ Cached Network Images
 GoRouter for navigation
 
 # 📱 Screenshots
-![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٨-٥٨-٤٦٦_com example bookly_app](https://github.com/user-attachments/assets/35755490-bc35-4dfa-abc9-c6d567873d86)
-![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٨-٠٢-٢٠٨_com example bookly_app](https://github.com/user-attachments/assets/1c1d1eea-2819-42f6-abb2-d7e088422338)
-![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٦-٤٨-٢٠٠_com example bookly_app](https://github.com/user-attachments/assets/4b3fedc6-4b3d-4ee7-946c-32db8db5f275)
-
+<div>
+  <img src="https://github.com/user-attachments/assets/35755490-bc35-4dfa-abc9-c6d567873d86" width="150">
+  <img src="https://github.com/user-attachments/assets/1c1d1eea-2819-42f6-abb2-d7e088422338" width="150">
+  <img src="https://github.com/user-attachments/assets/4b3fedc6-4b3d-4ee7-946c-32db8db5f275" width="150">
+</div>

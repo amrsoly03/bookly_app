@@ -1,16 +1,38 @@
-# bookly_app
+# 📚 Bookly App
+Bookly is a beautifully crafted Flutter application that allows users to browse, preview, and read books using the power of the Google Books API. Designed with a clean and responsive UI, Bookly delivers a seamless digital reading experience and showcases best practices in Flutter development.
 
-A new Flutter project.
+# 🚀 Features
+🔍 Search for books by title, author, or keyword
 
-## Getting Started
+📖 View detailed book info including description, author, and ratings
 
-This project is a starting point for a Flutter application.
+📥 Download book previews and open them inside the app
 
-A few resources to get you started if this is your first Flutter project:
+🧭 Explore curated book categories like "Best Sellers", "Newest", and "Free Books"
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+📦 Clean architecture (MVVM) with proper state management using Cubit
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+🌐 API integration with error handling and network resilience
+
+💡 Modular codebase for scalability and maintainability
+
+# 🛠 Tech Stack
+Flutter
+
+Dart
+
+Cubit (flutter_bloc)
+
+Google Books API
+
+Clean Architecture (MVVM)
+
+Cached Network Images
+
+GoRouter for navigation
+
+# 📱 Screenshots
+![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٨-٥٨-٤٦٦_com example bookly_app](https://github.com/user-attachments/assets/35755490-bc35-4dfa-abc9-c6d567873d86)
+![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٨-٠٢-٢٠٨_com example bookly_app](https://github.com/user-attachments/assets/1c1d1eea-2819-42f6-abb2-d7e088422338)
+![Screenshot_٢٠٢٤-٠٧-٢٥-١٨-٣٦-٤٨-٢٠٠_com example bookly_app](https://github.com/user-attachments/assets/4b3fedc6-4b3d-4ee7-946c-32db8db5f275)
+
